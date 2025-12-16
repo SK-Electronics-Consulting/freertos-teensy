@@ -304,7 +304,7 @@ FLASHMEM void yield() {
             portDATA_SYNC_BARRIER(); // mitigate arm errata #838869
         } else {
             ::xTaskNotify(freertos::g_yield_task, 0, eNoAction);
-            ::vTaskDelay(1);
+            ::vTaskDelay(0);
         }
     } else {
         freertos::yield();
